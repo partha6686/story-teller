@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../styles/Blog.module.css";
 import Link from "next/link";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 
 const Blog = () => {
   const [blogs, setBlogs] = useState([]);
@@ -34,11 +34,11 @@ const Blog = () => {
         {blogs &&
           blogs.map((blog) => {
             return (
-              <div key={blog.title}>
-                <Link href={"/blogpost/Lorem-quaerat"}>
+              <div key={blog.slug}>
+                <Link href={`/blogpost/${blog.slug}`}>
                   <h3>{blog.title}</h3>
                 </Link>
-                <p>{blog.content}</p>
+                <p>{blog.content.substr(0, 200)}...</p>
               </div>
             );
           })}
