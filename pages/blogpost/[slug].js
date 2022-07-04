@@ -2,21 +2,8 @@ import React from "react";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 
-const slug = () => {
-  const router = useRouter();
-  const { slug } = router.query;
-  const [blog, setBlog] = useState({});
-  const host = "http://localhost:3000/api/";
-  const getBlogs = async () => {
-    const response = await fetch(`${host}getblog?bt=${slug}`, {
-      method: "GET",
-    });
-    const json = await response.json();
-    setBlog(json);
-  };
-  useEffect(() => {
-    getBlogs();
-  }, [router.isReady]);
+const slug = (props) => {
+  const [blog, setBlog] = useState(props.json);
   return (
     <div className="container">
       <main className="main">
@@ -29,3 +16,16 @@ const slug = () => {
 };
 
 export default slug;
+
+export async function getServerSideProps(context) {
+  //const router = useRouter();
+  const { slug } = context.query;
+  const host = "http://localhost:3000/api/";
+  const response = await fetch(`${host}getblog?bt=${slug}`, {
+    method: "GET",
+  });
+  const json = await response.json();
+  return {
+    props: { json }, // will be passed to the page component as props
+  };
+}

@@ -3,31 +3,8 @@ import styles from "../styles/Blog.module.css";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 
-const Blog = () => {
-  const [blogs, setBlogs] = useState([]);
-  const host = "http://localhost:3000/api/";
-  const getBlogs = async () => {
-    const response = await fetch(`${host}blogs`, {
-      method: "GET",
-    });
-    const json = await response.json();
-    setBlogs(json);
-  };
-  useEffect(() => {
-    getBlogs();
-    // fetch(`${host}blogs`, {
-    //   method: "GET",
-    // })
-    //   .then((response) => {
-    //     return response.json();
-    //   })
-    //   .then((json) => {
-    //     console.log(json);
-    //     setBlogs(json);
-    //   });
-  }, []);
-
-  // console.log(blogs);
+const Blog = (props) => {
+  const [blogs, setBlogs] = useState(props.json);
   return (
     <div className="container">
       <main className={styles.main}>
@@ -48,3 +25,14 @@ const Blog = () => {
 };
 
 export default Blog;
+
+export async function getServerSideProps(context) {
+  const host = "http://localhost:3000/api/";
+  const response = await fetch(`${host}blogs`, {
+    method: "GET",
+  });
+  const json = await response.json();
+  return {
+    props: { json },
+  };
+}
