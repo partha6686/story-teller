@@ -4,12 +4,15 @@ import { useState, useEffect } from "react";
 
 const slug = (props) => {
   const [blog, setBlog] = useState(props.json);
+  const createMarkup = () => {
+    return { __html: blog.content };
+  };
   return (
     <div className="container">
       <main className="main">
         <h1>Title: {blog.title}</h1>
         <hr />
-        <p>{blog.content}</p>
+        {blog && <div dangerouslySetInnerHTML={createMarkup()} />}
       </main>
     </div>
   );
