@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-const slug = (props) => {
+const Slug = (props) => {
   const [blog, setBlog] = useState(props.json);
   const createMarkup = () => {
     return { __html: blog.content };
@@ -17,7 +17,7 @@ const slug = (props) => {
   );
 };
 
-export default slug;
+export default Slug;
 
 export async function getServerSideProps(context) {
   //const router = useRouter();

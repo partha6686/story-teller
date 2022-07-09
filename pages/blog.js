@@ -20,7 +20,7 @@ const Blog = (props) => {
     <div className="container">
       <main className={styles.main}>
         <InfiniteScroll
-          dataLength={blogs.length} 
+          dataLength={blogs.length}
           next={fetchData}
           hasMore={blogs.length !== len}
           loader={<h4>Loading...</h4>}
@@ -30,7 +30,7 @@ const Blog = (props) => {
             blogs.map((blog) => {
               return (
                 <div key={blog.slug}>
-                  <Link href={`/blogpost/${blog.slug}`}>
+                  <Link href={`/blogpost/${blog.slug}`} passHref>
                     <h3>{blog.title}</h3>
                   </Link>
                   <p>{blog.metadesc && blog.metadesc.substr(0, 200)}...</p>

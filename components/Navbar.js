@@ -7,22 +7,22 @@ const Navbar = () => {
     <nav>
       <div className={styles.mainnav}>
         <ul>
-          <Link href="/">
+          <Link href="/" passHref>
             <a>
               <li>Home</li>
             </a>
           </Link>
-          <Link href="/about">
+          <Link href="/about" passHref>
             <a>
               <li>About</li>
             </a>
           </Link>
-          <Link href="/blog">
+          <Link href="/blog" passHref>
             <a>
               <li>Blog</li>
             </a>
           </Link>
-          <Link href="/contact">
+          <Link href="/contact" passHref>
             <a>
               <li>Contact</li>
             </a>

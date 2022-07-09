@@ -20,6 +20,7 @@ export default function Home() {
           src="/hero.jpg"
           width={300}
           height={180}
+          alt="story-teller-book"
         />
         <h1 className={styles.title}>Story Teller</h1>
         <div>
