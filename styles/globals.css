@@ -13,6 +13,14 @@ a {
 p {
   text-align: justify;
 }
+input,
+textarea,
+form {
+  width: 100%;
+}
+input {
+  height: 2rem;
+}
 
 * {
   box-sizing: border-box;

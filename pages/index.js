@@ -21,14 +21,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <h1 className={styles.title}>Story Teller</h1>
         <Image
           className={styles.hero_img}
           src="/hero.jpg"
-          width={518}
-          height={345}
+          width={300}
+          height={180}
         />
-        <p className={styles.description}>Best Story Collection</p>
+        <h1 className={styles.title}>Story Teller</h1>
         <div>
           <h2>Popular Stories</h2>
           <h3>Lorem, quaerat itaque ratione. Accusamus?</h3>

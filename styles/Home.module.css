@@ -4,7 +4,7 @@
 
 .main {
   min-height: 100vh;
-  padding: 3rem 0;
+  padding: 1rem 0;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -40,20 +40,13 @@
 }
 
 .title {
-  margin: 2rem;
-  line-height: 1.15;
-  font-size: 4rem;
+  margin: 0.5rem;
+  line-height: 1;
+  font-size: 2.5rem;
 }
 
-.title,
-.description {
+.title {
   text-align: center;
-}
-
-.description {
-  margin: 2rem 0;
-  line-height: 1.5;
-  font-size: 1.5rem;
 }
 
 .code {
