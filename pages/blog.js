@@ -20,15 +20,11 @@ const Blog = (props) => {
     <div className="container">
       <main className={styles.main}>
         <InfiniteScroll
-          dataLength={blogs.length} //This is important field to render the next data
+          dataLength={blogs.length} 
           next={fetchData}
           hasMore={blogs.length !== len}
           loader={<h4>Loading...</h4>}
-          endMessage={
-            <p style={{ textAlign: "center" }}>
-              <b>Yay! You have seen it all</b>
-            </p>
-          }
+          endMessage={<p></p>}
         >
           {blogs &&
             blogs.map((blog) => {

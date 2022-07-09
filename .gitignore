@@ -5,6 +5,7 @@
 /.pnp
 .pnp.js
 /contactdata
+/blogdata
 
 # testing
 /coverage

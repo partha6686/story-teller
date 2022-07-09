@@ -4,7 +4,6 @@ import * as fs from "fs";
 export default function handler(req, res) {
   if (req.method === "POST") {
     let key = Math.floor(Math.random() * 100000 + 1);
-    // console.log(SnakeCase(req.body.name));
     if (!req.body.name) {
       res.status(400).json({ error: "Name Can't be empty" });
     } else {
@@ -21,7 +20,6 @@ export default function handler(req, res) {
         }
       );
     }
-    // Process a POST request
   } else {
     res.status(400).json({ error: "Bad Request" });
   }

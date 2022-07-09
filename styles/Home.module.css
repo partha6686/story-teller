@@ -111,8 +111,10 @@
 .hero_img {
   border-radius: 1rem;
 }
+
 @media (max-width: 800px) {
   .container {
     padding: 0 1rem;
   }
+
 }
