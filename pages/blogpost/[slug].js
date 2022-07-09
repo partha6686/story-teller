@@ -1,6 +1,5 @@
 import React from "react";
-import { useRouter } from "next/router";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const slug = (props) => {
   const [blog, setBlog] = useState(props.json);
